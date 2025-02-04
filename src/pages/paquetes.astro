@@ -1,0 +1,290 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const paquetes = [
+  {
+    nombre: "Paquete Básico",
+    precio: "180.000",
+    precioAnterior: "200.000",
+    sesiones: 4,
+    descripcion: "Ideal para comenzar tu proceso terapéutico",
+    beneficios: [
+      "4 sesiones mensuales",
+      "Evaluación inicial completa",
+      "Plan terapéutico personalizado",
+      "Seguimiento entre sesiones",
+      "Materiales de apoyo"
+    ],
+    destacado: false,
+    ahorro: "20.000",
+    icon: "🌱"
+  },
+  {
+    nombre: "Paquete Premium",
+    precio: "340.000",
+    precioAnterior: "400.000",
+    sesiones: 8,
+    descripcion: "Recomendado para un proceso terapéutico completo",
+    beneficios: [
+      "8 sesiones mensuales",
+      "Evaluación inicial completa",
+      "Plan terapéutico personalizado",
+      "Seguimiento prioritario entre sesiones",
+      "Materiales de apoyo exclusivos",
+      "Sesiones de emergencia disponibles",
+      "15% descuento en sesiones adicionales"
+    ],
+    destacado: true,
+    ahorro: "60.000",
+    icon: "⭐"
+  },
+  {
+    nombre: "Paquete Familiar",
+    precio: "450.000",
+    precioAnterior: "550.000",
+    sesiones: 10,
+    descripcion: "Perfecto para terapia familiar o de pareja",
+    beneficios: [
+      "10 sesiones mensuales",
+      "Evaluación familiar completa",
+      "Plan terapéutico familiar",
+      "Sesiones individuales incluidas",
+      "Seguimiento constante",
+      "Materiales de apoyo para toda la familia",
+      "20% descuento en sesiones adicionales"
+    ],
+    destacado: false,
+    ahorro: "100.000",
+    icon: "👨‍👩‍👧‍👦"
+  }
+];
+
+const promociones = [
+  {
+    titulo: "Primera Consulta",
+    descripcion: "Evaluación inicial con 25% de descuento",
+    precio: "75.000",
+    precioAnterior: "100.000",
+    duracion: "Válido hasta fin de mes",
+    icon: "🎯"
+  },
+  {
+    titulo: "Paquete Parejas",
+    descripcion: "6 sesiones de terapia de pareja",
+    precio: "270.000",
+    precioAnterior: "300.000",
+    duracion: "Oferta limitada",
+    icon: "💑"
+  },
+  {
+    titulo: "Sesiones Online",
+    descripcion: "Pack de 4 sesiones virtuales",
+    precio: "160.000",
+    precioAnterior: "200.000",
+    duracion: "Disponibilidad permanente",
+    icon: "💻"
+  }
+];
+---
+
+<Layout title="Paquetes y Precios">
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative py-32 overflow-hidden">
+      <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/60 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1590650153855-d9e808231d41?ixlib=rb-4.0.3')] bg-cover bg-center bg-fixed"></div>
+      </div>
+      <div class="container mx-auto px-4 relative">
+        <div class="max-w-4xl mx-auto text-center text-white">
+          <h1 class="font-serif text-5xl md:text-6xl mb-6 animate-fade-in">
+            Paquetes y Precios
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 animate-fade-in delay-200">
+            Invierte en tu bienestar emocional con nuestros planes personalizados
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paquetes Principales -->
+    <section class="py-32 bg-white relative">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl text-primary text-center mb-16">Nuestros Paquetes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {paquetes.map((paquete) => (
+            <div class={`relative flex flex-col bg-white rounded-3xl shadow-xl transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-2 ${paquete.destacado ? 'ring-4 ring-accent' : ''}`}>
+              {paquete.destacado && (
+                <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 z-10">
+                  <span class="bg-accent text-white px-6 py-2 rounded-full text-sm font-medium shadow-lg">
+                    Más Popular
+                  </span>
+                </div>
+              )}
+              <div class={`p-8 ${paquete.destacado ? 'bg-gradient-to-br from-primary to-accent rounded-t-3xl' : 'bg-gradient-to-br from-primary/90 to-primary rounded-t-3xl'}`}>
+                <div class="text-center text-white">
+                  <div class="inline-block p-4 rounded-full bg-white/10 backdrop-blur-sm mb-4">
+                    <span class="text-4xl">{paquete.icon}</span>
+                  </div>
+                  <h3 class="font-serif text-2xl mb-4">{paquete.nombre}</h3>
+                  <div class="flex items-center justify-center gap-3 mb-2">
+                    <span class="text-white/70 line-through text-lg">${paquete.precioAnterior}</span>
+                    <span class="text-4xl font-bold">${paquete.precio}</span>
+                  </div>
+                  <p class="text-white/90 bg-white/10 rounded-full py-1 px-4 inline-block">
+                    {paquete.sesiones} sesiones
+                  </p>
+                </div>
+              </div>
+              <div class="p-8 flex-grow flex flex-col">
+                <p class="text-text/80 text-center mb-8 text-lg">{paquete.descripcion}</p>
+                <div class="flex-grow">
+                  <ul class="space-y-4 mb-8">
+                    {paquete.beneficios.map((beneficio) => (
+                      <li class="flex items-start">
+                        <div class="bg-primary/10 rounded-full p-1 mr-3 mt-1">
+                          <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                          </svg>
+                        </div>
+                        <span class="text-text/70">{beneficio}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="mt-auto">
+                  <div class="bg-secondary/30 rounded-2xl p-4 mb-6 text-center">
+                    <p class="text-accent font-medium">
+                      Ahorra <span class="text-xl font-bold">${paquete.ahorro}</span>
+                    </p>
+                  </div>
+                  <a
+                    href="/agendar"
+                    class={`group inline-flex items-center justify-center w-full py-4 rounded-full text-center transition-all duration-300 ${
+                      paquete.destacado
+                        ? 'bg-accent text-white hover:bg-primary'
+                        : 'bg-primary text-white hover:bg-accent'
+                    }`}
+                  >
+                    <span class="mr-2">Comenzar Ahora</span>
+                    <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Promociones -->
+    <section class="py-32 bg-gradient-to-br from-secondary/30 to-secondary/10">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl text-primary text-center mb-16">Promociones Especiales</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {promociones.map((promo) => (
+            <div class="flex flex-col bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full">
+              <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="text-4xl">{promo.icon}</span>
+              </div>
+              <h3 class="font-serif text-2xl text-primary mb-4 text-center">{promo.titulo}</h3>
+              <p class="text-text/70 text-center mb-6 flex-grow">{promo.descripcion}</p>
+              <div class="mt-auto">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                  <span class="text-text/50 line-through">${promo.precioAnterior}</span>
+                  <span class="text-3xl font-bold text-primary">${promo.precio}</span>
+                </div>
+                <p class="text-sm text-accent text-center mb-6">{promo.duracion}</p>
+                <a
+                  href="/contacto"
+                  class="group flex items-center justify-center w-full py-3 bg-primary text-white text-center rounded-full hover:bg-accent transition-all duration-300"
+                >
+                  <span class="mr-2">Más Información</span>
+                  <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-32 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-serif text-4xl text-primary text-center mb-16">Preguntas Frecuentes</h2>
+          <div class="space-y-6">
+            <div class="bg-gradient-to-br from-primary/5 to-secondary/20 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
+              <h3 class="font-serif text-xl text-primary mb-4">¿Cómo puedo pagar las sesiones?</h3>
+              <p class="text-text/70">
+                Aceptamos diferentes métodos de pago incluyendo transferencia bancaria, tarjetas de crédito/débito y efectivo.
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-primary/5 to-secondary/20 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
+              <h3 class="font-serif text-xl text-primary mb-4">¿Los paquetes tienen fecha de vencimiento?</h3>
+              <p class="text-text/70">
+                Los paquetes tienen una validez de 3 meses desde la fecha de compra para garantizar la continuidad del proceso terapéutico.
+              </p>
+            </div>
+            <div class="bg-gradient-to-br from-primary/5 to-secondary/20 rounded-2xl p-8 hover:shadow-lg transition-all duration-300">
+              <h3 class="font-serif text-xl text-primary mb-4">¿Puedo transferir mis sesiones a otra persona?</h3>
+              <p class="text-text/70">
+                Las sesiones son personales e intransferibles para mantener la calidad y continuidad del proceso terapéutico.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-32 bg-gradient-to-br from-primary/10 to-secondary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto bg-white rounded-3xl p-12 text-center shadow-xl">
+          <h2 class="font-serif text-4xl text-primary mb-8">¿Necesitas ayuda para elegir?</h2>
+          <p class="text-text/80 text-xl mb-12 max-w-2xl mx-auto">
+            Agenda una llamada de consulta gratuita y te ayudaré a encontrar el paquete que mejor se adapte a tus necesidades.
+          </p>
+          <div class="flex flex-wrap justify-center gap-6">
+            <a 
+              href="/contacto" 
+              class="group inline-flex items-center bg-primary text-white px-8 py-4 rounded-full text-lg hover:bg-accent transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
+              <span class="mr-2">Agendar Consulta Gratuita</span>
+              <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .animate-fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .delay-200 {
+      animation-delay: 200ms;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</Layout>

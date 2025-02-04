@@ -1,0 +1,288 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const procesoTerapeutico = [
+  {
+    titulo: "Primera Sesión",
+    descripcion: "Evaluación inicial y establecimiento de objetivos terapéuticos",
+    pasos: [
+      "Conocernos y crear un ambiente de confianza",
+      "Explorar tus preocupaciones principales",
+      "Identificar objetivos terapéuticos",
+      "Diseñar un plan de tratamiento personalizado"
+    ],
+    duracion: "60 minutos",
+    icon: "🤝"
+  },
+  {
+    titulo: "Proceso Terapéutico",
+    descripcion: "Desarrollo del trabajo terapéutico y aplicación de técnicas",
+    pasos: [
+      "Exploración profunda de temas relevantes",
+      "Aplicación de técnicas terapéuticas",
+      "Desarrollo de nuevas habilidades",
+      "Seguimiento del progreso"
+    ],
+    duracion: "50 minutos por sesión",
+    icon: "🌱"
+  },
+  {
+    titulo: "Evaluación y Cierre",
+    descripcion: "Revisión de objetivos y planificación futura",
+    pasos: [
+      "Evaluación de los objetivos alcanzados",
+      "Consolidación de aprendizajes",
+      "Prevención de recaídas",
+      "Plan de mantenimiento"
+    ],
+    duracion: "Según necesidades",
+    icon: "🎯"
+  }
+];
+
+const pilares = [
+  {
+    titulo: "Enfoque Integral",
+    descripcion: "Combinación de diferentes técnicas terapéuticas adaptadas a cada persona",
+    icon: "🧩"
+  },
+  {
+    titulo: "Basado en Evidencia",
+    descripcion: "Utilización de métodos probados científicamente",
+    icon: "📚"
+  },
+  {
+    titulo: "Confidencialidad",
+    descripcion: "Absoluta privacidad y ética profesional",
+    icon: "🔒"
+  },
+  {
+    titulo: "Empatía",
+    descripcion: "Comprensión profunda y sin juicios",
+    icon: "💝"
+  }
+];
+
+const herramientas = [
+  {
+    nombre: "Terapia Cognitivo-Conductual",
+    descripcion: "Identificación y modificación de patrones de pensamiento y comportamiento",
+    beneficios: [
+      "Reducción de síntomas",
+      "Desarrollo de habilidades de afrontamiento",
+      "Cambios duraderos",
+      "Resultados medibles"
+    ],
+    icon: "🧠"
+  },
+  {
+    nombre: "Mindfulness",
+    descripcion: "Técnicas de atención plena para el manejo del estrés y la ansiedad",
+    beneficios: [
+      "Mayor consciencia emocional",
+      "Reducción del estrés",
+      "Mejor regulación emocional",
+      "Claridad mental"
+    ],
+    icon: "🧘‍♀️"
+  },
+  {
+    nombre: "Terapia Sistémica",
+    descripcion: "Abordaje de las dinámicas relacionales y familiares",
+    beneficios: [
+      "Mejora de relaciones",
+      "Resolución de conflictos",
+      "Comunicación efectiva",
+      "Cambios sistémicos"
+    ],
+    icon: "🔄"
+  }
+];
+
+const valores = [
+  {
+    titulo: "Compromiso",
+    descripcion: "Dedicación total a tu proceso de crecimiento y bienestar",
+    icon: "🤝"
+  },
+  {
+    titulo: "Profesionalismo",
+    descripcion: "Actualización constante y práctica basada en evidencia",
+    icon: "👩‍⚕️"
+  },
+  {
+    titulo: "Respeto",
+    descripcion: "Valoración de tu individualidad y experiencia única",
+    icon: "🙏"
+  },
+  {
+    titulo: "Empatía",
+    descripcion: "Comprensión profunda de tu situación y emociones",
+    icon: "❤️"
+  }
+];
+---
+
+<Layout title="Cómo Trabajo">
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/60 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3')] bg-cover bg-center"></div>
+      </div>
+      
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center text-white">
+          <h1 class="font-serif text-5xl md:text-6xl mb-6 animate-fade-in">
+            Mi Enfoque Terapéutico
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 animate-fade-in delay-200">
+            Un viaje personalizado hacia tu bienestar emocional
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proceso Terapéutico -->
+    <section class="py-32 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl text-primary text-center mb-16">El Proceso Terapéutico</h2>
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {procesoTerapeutico.map((fase, index) => (
+              <div class="relative">
+                <div class="bg-white rounded-2xl shadow-xl p-8 h-full transform hover:-translate-y-2 transition-all duration-300">
+                  <div class="absolute top-4 right-4 text-4xl">{fase.icon}</div>
+                  <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center mb-6">
+                    <span class="text-primary font-bold">{index + 1}</span>
+                  </div>
+                  <h3 class="font-serif text-2xl text-primary mb-4">{fase.titulo}</h3>
+                  <p class="text-text/70 mb-6">{fase.descripcion}</p>
+                  <ul class="space-y-3 mb-6">
+                    {fase.pasos.map((paso) => (
+                      <li class="flex items-start">
+                        <svg class="w-5 h-5 text-accent mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span class="text-text/80">{paso}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p class="text-sm text-primary/70 mt-auto">Duración: {fase.duracion}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pilares del Trabajo -->
+    <section class="py-32 bg-gradient-to-br from-secondary/30 to-secondary/10">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl text-primary text-center mb-16">Pilares de mi Trabajo</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {pilares.map((pilar) => (
+            <div class="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div class="text-4xl mb-6">{pilar.icon}</div>
+              <h3 class="font-serif text-xl text-primary mb-4">{pilar.titulo}</h3>
+              <p class="text-text/70">{pilar.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Herramientas Terapéuticas -->
+    <section class="py-32 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl text-primary text-center mb-16">Herramientas Terapéuticas</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {herramientas.map((herramienta) => (
+            <div class="bg-gradient-to-br from-primary/5 to-secondary/10 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div class="text-4xl mb-6">{herramienta.icon}</div>
+              <h3 class="font-serif text-2xl text-primary mb-4">{herramienta.nombre}</h3>
+              <p class="text-text/70 mb-6">{herramienta.descripcion}</p>
+              <h4 class="font-medium text-primary mb-4">Beneficios:</h4>
+              <ul class="space-y-2">
+                {herramienta.beneficios.map((beneficio) => (
+                  <li class="flex items-center text-text/70">
+                    <svg class="w-5 h-5 text-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    {beneficio}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="py-32 bg-gradient-to-br from-primary/10 to-secondary/20">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl text-primary text-center mb-16">Mis Valores</h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {valores.map((valor) => (
+            <div class="bg-white/80 backdrop-blur-md rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div class="text-4xl mb-6">{valor.icon}</div>
+              <h3 class="font-serif text-xl text-primary mb-4">{valor.titulo}</h3>
+              <p class="text-text/70">{valor.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-32 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto bg-gradient-to-br from-primary to-accent text-white rounded-3xl p-12 text-center transform hover:scale-[1.02] transition-all duration-300 shadow-2xl">
+          <h2 class="font-serif text-4xl mb-8">¿Listo para comenzar tu proceso terapéutico?</h2>
+          <p class="text-white/90 text-xl mb-12 max-w-2xl mx-auto">
+            Agenda tu primera consulta y descubre cómo puedo ayudarte a alcanzar tu bienestar emocional.
+          </p>
+          <div class="flex flex-wrap justify-center gap-6">
+            <a 
+              href="/agendar" 
+              class="inline-block bg-white text-primary px-8 py-4 rounded-full text-lg hover:bg-secondary transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
+              Agendar Primera Consulta
+            </a>
+            <a 
+              href="/contacto" 
+              class="inline-block bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
+              Contactar
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .animate-fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .delay-200 {
+      animation-delay: 200ms;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</Layout>

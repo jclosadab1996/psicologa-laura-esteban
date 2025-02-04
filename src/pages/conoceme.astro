@@ -1,0 +1,234 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const educacion = [
+  {
+    titulo: "Doctorado en Psicología Clínica",
+    institucion: "Universidad Nacional de Colombia",
+    año: "2015-2019",
+    descripcion: "Especialización en Terapia Cognitivo-Conductual y tratamiento de trastornos de ansiedad.",
+    icon: "🎓"
+  },
+  {
+    titulo: "Maestría en Psicoterapia",
+    institucion: "Universidad del Valle",
+    año: "2012-2014",
+    descripcion: "Enfoque en terapia familiar y de pareja.",
+    icon: "📚"
+  },
+  {
+    titulo: "Licenciatura en Psicología",
+    institucion: "Universidad Javeriana",
+    año: "2007-2012",
+    descripcion: "Formación integral en psicología clínica y desarrollo humano.",
+    icon: "🎯"
+  }
+];
+
+const certificaciones = [
+  {
+    titulo: "Certificación en Mindfulness y Reducción del Estrés",
+    icon: "🧘‍♀️"
+  },
+  {
+    titulo: "Especialista en Terapia de Esquemas",
+    icon: "🎯"
+  },
+  {
+    titulo: "Certificación en Terapia Breve Centrada en Soluciones",
+    icon: "💡"
+  },
+  {
+    titulo: "Experta en Intervención en Crisis",
+    icon: "🆘"
+  }
+];
+
+const experiencia = [
+  {
+    cargo: "Psicóloga Clínica Senior",
+    lugar: "Centro Médico Imbanaco",
+    periodo: "2019-Presente",
+    descripcion: "Atención psicológica individual y grupal, especializada en trastornos de ansiedad y depresión.",
+    icon: "👥"
+  },
+  {
+    cargo: "Terapeuta de Familia",
+    lugar: "Fundación Valle del Lili",
+    periodo: "2015-2019",
+    descripcion: "Terapia familiar y de pareja, manejo de crisis y conflictos relacionales.",
+    icon: "👨‍👩‍👧‍👦"
+  },
+  {
+    cargo: "Psicóloga Consultora",
+    lugar: "Clínica de Occidente",
+    periodo: "2012-2015",
+    descripcion: "Evaluación psicológica y tratamiento de trastornos emocionales.",
+    icon: "🏥"
+  }
+];
+
+const stats = [
+  { numero: "15+", texto: "Años de Experiencia", icon: "⏳" },
+  { numero: "1000+", texto: "Pacientes Atendidos", icon: "👥" },
+  { numero: "50+", texto: "Workshops Impartidos", icon: "📚" },
+  { numero: "10+", texto: "Publicaciones", icon: "📝" }
+];
+---
+
+<Layout title="Conóceme">
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/50 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1590650046871-92c887180603?ixlib=rb-4.0.3')] bg-cover bg-center bg-fixed"></div>
+      </div>
+      
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto text-center text-white">
+          <h1 class="font-serif text-5xl md:text-7xl mb-6 animate-fade-in">
+            Dra. Laura Esteban
+          </h1>
+          <p class="text-xl md:text-2xl mb-8 animate-fade-in">
+            Psicóloga Clínica especializada en el bienestar emocional y el desarrollo personal
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            {stats.map((stat) => (
+              <div class="bg-white/10 backdrop-blur-md px-6 py-4 rounded-xl text-center transform hover:scale-105 transition-all duration-300">
+                <span class="text-3xl block mb-2">{stat.icon}</span>
+                <span class="text-2xl font-bold block">{stat.numero}</span>
+                <span class="text-sm opacity-90">{stat.texto}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mi Historia -->
+    <section class="py-32 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-gradient-to-br from-primary/5 to-secondary/10 rounded-3xl shadow-xl p-8 md:p-12">
+            <h2 class="font-serif text-4xl text-primary mb-12 text-center">Mi Historia</h2>
+            <div class="space-y-8 text-lg text-text/80">
+              <div>
+                <h3 class="font-serif text-2xl text-primary mb-4">El Comienzo</h3>
+                <p>
+                  Con más de 15 años de experiencia en el campo de la psicología clínica, he dedicado mi carrera a ayudar a las personas a superar sus desafíos emocionales y alcanzar una mejor calidad de vida.
+                </p>
+              </div>
+              <div>
+                <h3 class="font-serif text-2xl text-primary mb-4">Mi Enfoque</h3>
+                <p>
+                  Mi enfoque terapéutico se basa en la comprensión profunda de que cada persona es única, y por lo tanto, cada proceso terapéutico debe ser personalizado y adaptado a las necesidades específicas de cada individuo.
+                </p>
+              </div>
+              <div>
+                <h3 class="font-serif text-2xl text-primary mb-4">Especialización</h3>
+                <p>
+                  Me especializo en el tratamiento de trastornos de ansiedad, depresión, problemas de pareja y desarrollo personal, utilizando técnicas basadas en la evidencia y un enfoque integrador que combina diferentes aproximaciones terapéuticas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formación Académica -->
+    <section class="py-32 bg-gradient-to-br from-secondary/30 to-secondary/10">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl text-primary text-center mb-16">Formación Académica</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {educacion.map((item) => (
+            <div class="bg-white rounded-2xl shadow-xl p-8 transform hover:-translate-y-2 transition-all duration-500">
+              <div class="text-4xl mb-6 text-center">{item.icon}</div>
+              <h3 class="font-serif text-2xl text-primary mb-4 text-center">{item.titulo}</h3>
+              <p class="text-accent font-medium mb-2 text-center">{item.institucion}</p>
+              <p class="text-sm text-text/60 mb-4 text-center">{item.año}</p>
+              <p class="text-text/80 text-center">{item.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiencia Profesional -->
+    <section class="py-32 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl text-primary text-center mb-16">Experiencia Profesional</h2>
+        <div class="max-w-4xl mx-auto">
+          {experiencia.map((item) => (
+            <div class="relative pl-8 pb-12">
+              <div class="absolute left-0 top-0 w-px h-full bg-primary/20"></div>
+              <div class="absolute left-[-8px] top-0 w-4 h-4 rounded-full bg-primary"></div>
+              <div class="bg-white rounded-2xl shadow-lg p-8 transform hover:-translate-x-2 transition-all duration-300">
+                <div class="text-3xl mb-4">{item.icon}</div>
+                <div class="flex flex-wrap gap-4 items-start justify-between mb-4">
+                  <div>
+                    <h3 class="font-serif text-2xl text-primary mb-1">{item.cargo}</h3>
+                    <p class="text-accent">{item.lugar}</p>
+                  </div>
+                  <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm">
+                    {item.periodo}
+                  </span>
+                </div>
+                <p class="text-text/80">{item.descripcion}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificaciones -->
+    <section class="py-32 bg-gradient-to-br from-primary/10 to-secondary/30">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl text-primary text-center mb-16">Certificaciones</h2>
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+          {certificaciones.map((cert) => (
+            <div class="bg-white/90 backdrop-blur-md rounded-2xl p-8 flex items-center transform hover:scale-105 transition-all duration-300 shadow-lg">
+              <div class="text-4xl mr-6">{cert.icon}</div>
+              <span class="text-lg text-text/80">{cert.titulo}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-32 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto bg-gradient-to-br from-primary to-accent text-white rounded-3xl p-12 text-center transform hover:scale-[1.02] transition-all duration-300 shadow-2xl">
+          <h2 class="font-serif text-4xl mb-8">¿Listo para comenzar tu proceso terapéutico?</h2>
+          <p class="text-white/90 text-xl mb-12 max-w-2xl mx-auto">
+            Agenda tu primera consulta y comencemos juntos el camino hacia tu bienestar emocional.
+          </p>
+          <a 
+            href="/agendar" 
+            class="inline-block bg-white text-primary px-12 py-5 rounded-full text-xl font-medium hover:bg-secondary transition-all duration-300 hover:scale-105 hover:shadow-lg transform"
+          >
+            Agendar Cita
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</Layout>

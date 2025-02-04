@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const servicios = [
+  {
+    titulo: "Terapia Individual",
+    descripcion: "Sesiones personalizadas para abordar problemas específicos como ansiedad, depresión, estrés o desarrollo personal.",
+    beneficios: [
+      "Ambiente seguro y confidencial",
+      "Enfoque personalizado",
+      "Herramientas prácticas para el día a día",
+      "Seguimiento continuo de progreso"
+    ],
+    duracion: "50 minutos",
+    modalidad: "Presencial o Virtual",
+    icon: "👤"
+  },
+  {
+    titulo: "Terapia de Pareja",
+    descripcion: "Ayuda profesional para mejorar la comunicación, resolver conflictos y fortalecer la relación.",
+    beneficios: [
+      "Mejora de la comunicación",
+      "Resolución de conflictos",
+      "Reconstrucción de la confianza",
+      "Fortalecimiento del vínculo"
+    ],
+    duracion: "60 minutos",
+    modalidad: "Presencial",
+    icon: "👥"
+  },
+  {
+    titulo: "Terapia Familiar",
+    descripcion: "Intervención terapéutica para mejorar las dinámicas familiares y resolver conflictos intergeneracionales.",
+    beneficios: [
+      "Mejora de la dinámica familiar",
+      "Resolución de conflictos",
+      "Establecimiento de límites saludables",
+      "Fortalecimiento de vínculos"
+    ],
+    duracion: "75 minutos",
+    modalidad: "Presencial",
+    icon: "👨‍👩‍👧‍👦"
+  }
+];
+
+const especialidades = [
+  {
+    titulo: "Trastornos de Ansiedad",
+    descripcion: "Tratamiento especializado para diferentes tipos de ansiedad, incluyendo ansiedad generalizada, ataques de pánico y fobias.",
+    icon: "🌱"
+  },
+  {
+    titulo: "Depresión",
+    descripcion: "Abordaje integral de la depresión mediante terapia cognitivo-conductual y otras técnicas basadas en la evidencia.",
+    icon: "🌟"
+  },
+  {
+    titulo: "Manejo del Estrés",
+    descripcion: "Técnicas y estrategias para gestionar el estrés y prevenir el agotamiento emocional.",
+    icon: "🧘‍♀️"
+  },
+  {
+    titulo: "Desarrollo Personal",
+    descripcion: "Acompañamiento en el proceso de autoconocimiento y crecimiento personal.",
+    icon: "⭐"
+  },
+  {
+    titulo: "Duelo",
+    descripcion: "Apoyo terapéutico para procesar pérdidas y atravesar el proceso de duelo.",
+    icon: "🌸"
+  },
+  {
+    titulo: "Trauma",
+    descripcion: "Tratamiento especializado para la superación de experiencias traumáticas.",
+    icon: "🌈"
+  }
+];
+
+const metodologias = [
+  {
+    nombre: "Terapia Cognitivo-Conductual",
+    descripcion: "Enfoque basado en la evidencia que ayuda a identificar y modificar patrones de pensamiento y comportamiento.",
+    icon: "🧠"
+  },
+  {
+    nombre: "Mindfulness",
+    descripcion: "Técnicas de atención plena para reducir el estrés y mejorar el bienestar emocional.",
+    icon: "🧘‍♀️"
+  },
+  {
+    nombre: "Terapia Centrada en Soluciones",
+    descripcion: "Enfoque orientado a resultados que se centra en construir soluciones más que en analizar problemas.",
+    icon: "💡"
+  }
+];
+---
+
+<Layout title="Servicios">
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="relative py-32 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/20"></div>
+      <div class="container mx-auto px-4 relative">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="font-serif text-5xl md:text-6xl text-primary mb-8 animate-fade-in">
+            Servicios Terapéuticos
+          </h1>
+          <p class="text-xl text-text/80 mb-12 animate-fade-in">
+            Ofrezco una variedad de servicios terapéuticos personalizados para ayudarte en tu camino hacia el bienestar emocional.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios Principales -->
+    <section class="py-32 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl text-primary text-center mb-16">Servicios Principales</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {servicios.map((servicio) => (
+            <div class="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+              <div class="bg-gradient-to-br from-primary to-accent p-8 text-white text-center">
+                <span class="text-4xl block mb-4">{servicio.icon}</span>
+                <h3 class="font-serif text-2xl mb-2">{servicio.titulo}</h3>
+                <div class="text-white/80 text-sm">
+                  <p>{servicio.duracion}</p>
+                  <p>{servicio.modalidad}</p>
+                </div>
+              </div>
+              <div class="p-8">
+                <p class="text-text/80 mb-6">{servicio.descripcion}</p>
+                <div class="space-y-3">
+                  <h4 class="font-medium text-primary mb-3">Beneficios:</h4>
+                  <ul class="space-y-2">
+                    {servicio.beneficios.map((beneficio) => (
+                      <li class="flex items-center text-text/70">
+                        <svg class="w-5 h-5 text-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        {beneficio}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Especialidades -->
+    <section class="py-32 bg-gradient-to-br from-secondary/30 to-secondary/10">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl text-primary text-center mb-16">Áreas de Especialización</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {especialidades.map((especialidad) => (
+            <div class="bg-white/80 backdrop-blur-md rounded-2xl p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div class="text-4xl mb-4">{especialidad.icon}</div>
+              <h3 class="font-serif text-2xl text-primary mb-4">{especialidad.titulo}</h3>
+              <p class="text-text/70">{especialidad.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Metodologías -->
+    <section class="py-32 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl text-primary text-center mb-16">Metodologías Terapéuticas</h2>
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          {metodologias.map((metodologia) => (
+            <div class="bg-gradient-to-br from-primary/5 to-secondary/10 rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300">
+              <div class="text-4xl mb-6">{metodologia.icon}</div>
+              <h3 class="font-serif text-xl text-primary mb-4">{metodologia.nombre}</h3>
+              <p class="text-text/70">{metodologia.descripcion}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-32 bg-gradient-to-br from-primary/10 to-secondary/20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto bg-white rounded-3xl p-12 text-center shadow-xl">
+          <h2 class="font-serif text-4xl text-primary mb-8">¿Necesitas ayuda profesional?</h2>
+          <p class="text-text/80 text-xl mb-12 max-w-2xl mx-auto">
+            Estoy aquí para ayudarte. Agenda una consulta y demos el primer paso juntos hacia tu bienestar emocional.
+          </p>
+          <div class="flex flex-wrap justify-center gap-6">
+            <a 
+              href="/agendar" 
+              class="inline-block bg-primary text-white px-8 py-4 rounded-full text-lg hover:bg-accent transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
+              Agendar Cita
+            </a>
+            <a 
+              href="/contacto" 
+              class="inline-block bg-white text-primary border-2 border-primary px-8 py-4 rounded-full text-lg hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
+              Contactar
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</Layout>

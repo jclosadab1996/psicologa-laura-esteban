@@ -1,0 +1,262 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const testimonios = [
+  {
+    nombre: "María González",
+    texto: "Laura me ayudó a superar mi ansiedad y encontrar un mejor equilibrio en mi vida.",
+    rating: 5
+  },
+  {
+    nombre: "Carlos Ramírez",
+    texto: "Excelente profesional. Sus sesiones me han ayudado enormemente en mi desarrollo personal.",
+    rating: 5
+  },
+  {
+    nombre: "Ana Valencia",
+    texto: "Gracias a Laura he podido mejorar mis relaciones interpersonales significativamente.",
+    rating: 5
+  }
+];
+---
+
+<Layout title="Inicio">
+  <main class="overflow-x-hidden">
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary to-light pt-16">
+      <div class="container mx-auto px-4 py-16">
+        <div class="text-center animate-fade-in">
+          <h1 class="font-serif text-5xl md:text-7xl text-primary mb-6 animate-slide-up">Laura Esteban</h1>
+          <p class="text-2xl text-text/80 mb-8 animate-slide-up delay-200">Psicóloga Clínica</p>
+          <p class="max-w-2xl mx-auto text-lg text-text/70 mb-12 animate-slide-up delay-300">
+            Especializada en terapia individual y de pareja, ayudando a las personas a encontrar su mejor versión.
+          </p>
+          <a href="/agendar" class="inline-block bg-primary text-white px-8 py-4 rounded-full text-lg hover:bg-accent transition-all duration-300 hover:scale-105 hover:shadow-lg animate-slide-up delay-400">
+            Agenda tu Primera Consulta
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introducción -->
+    <section id="introduccion" class="py-32 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl md:text-5xl text-primary text-center mb-16 scroll-animate fade-in">Bienvenidos a mi Consulta</h2>
+        <div class="max-w-3xl mx-auto text-text/80 space-y-8 scroll-animate slide-up">
+          <p class="text-lg leading-relaxed">
+            Como psicóloga profesional, mi objetivo es proporcionar un espacio seguro y acogedor donde puedas explorar tus pensamientos y emociones libremente.
+          </p>
+          <p class="text-lg leading-relaxed">
+            Mi enfoque se centra en ayudarte a desarrollar las herramientas necesarias para superar los desafíos de la vida y alcanzar un mayor bienestar emocional.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enfoque -->
+    <section class="py-32 bg-gradient-to-br from-secondary/40 to-secondary/20">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl md:text-5xl text-primary text-center mb-16 scroll-animate fade-in">Mi Enfoque Terapéutico</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 scroll-animate slide-up">
+            <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+              <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl text-primary mb-4 text-center">Terapia Integral</h3>
+            <p class="text-text/80 text-center">
+              Combino diferentes técnicas terapéuticas para adaptarme a las necesidades específicas de cada persona.
+            </p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 scroll-animate slide-up delay-200">
+            <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+              <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl text-primary mb-4 text-center">Ambiente Seguro</h3>
+            <p class="text-text/80 text-center">
+              Creo un espacio de confianza donde puedas expresarte libremente sin juicios.
+            </p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 scroll-animate slide-up delay-400">
+            <div class="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+              <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-serif text-2xl text-primary mb-4 text-center">Resultados Duraderos</h3>
+            <p class="text-text/80 text-center">
+              Trabajo para que desarrolles herramientas que te ayuden a largo plazo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Acerca de Mi -->
+    <section class="py-32 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-serif text-4xl md:text-5xl text-primary text-center mb-16 scroll-animate fade-in">Acerca de Mí</h2>
+          <div class="prose max-w-none text-text/80 space-y-8 scroll-animate slide-up">
+            <p class="text-lg leading-relaxed">
+              Con más de una década de experiencia en el campo de la psicología, me he especializado en ayudar a las personas a superar desafíos emocionales y alcanzar una mejor calidad de vida.
+            </p>
+            <p class="text-lg leading-relaxed">
+              Mi formación incluye especialización en terapia cognitivo-conductual y terapia de pareja, permitiéndome ofrecer un enfoque integral y personalizado para cada paciente.
+            </p>
+            <p class="text-lg leading-relaxed">
+              Creo firmemente en la importancia de la conexión terapeuta-paciente y en crear un ambiente donde cada persona se sienta escuchada y comprendida.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="py-32 bg-gradient-to-br from-secondary/40 to-secondary/20">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl md:text-5xl text-primary text-center mb-16 scroll-animate fade-in">Testimonios</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          {testimonios.map((testimonio, index) => (
+            <div class={`bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 scroll-animate slide-up delay-${index * 200}`}>
+              <div class="flex justify-center mb-6">
+                {[...Array(testimonio.rating)].map(() => (
+                  <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <p class="text-text/80 mb-6 text-center text-lg">{testimonio.texto}</p>
+              <p class="font-semibold text-primary text-center">{testimonio.nombre}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section class="py-32 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="font-serif text-4xl md:text-5xl text-primary text-center mb-16 scroll-animate fade-in">Ubicación</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-gradient-to-br from-secondary/30 to-secondary/10 p-12 rounded-2xl shadow-xl scroll-animate slide-up">
+            <div class="mb-8">
+              <svg class="w-16 h-16 text-primary mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <h3 class="font-serif text-3xl text-primary mb-6 text-center">Consultorio</h3>
+              <div class="space-y-2 text-center">
+                <p class="text-text/80 text-xl">CC Pacific Mall</p>
+                <p class="text-text/80 text-xl">Piso 11, Consultorio 1109</p>
+                <p class="text-text/80 text-xl">Santiago de Cali 760001</p>
+              </div>
+            </div>
+            <div class="text-center">
+              <a 
+                href="https://www.google.com/maps/search/CC+Pacific+Mall+Cali" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="inline-block bg-primary text-white px-8 py-4 rounded-full hover:bg-accent transition-all duration-300 hover:scale-105 hover:shadow-lg text-lg"
+              >
+                Ver en Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    /* Animaciones base */
+    .animate-fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .animate-slide-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideUp 1s ease-out forwards;
+    }
+
+    .delay-200 {
+      animation-delay: 200ms;
+    }
+
+    .delay-300 {
+      animation-delay: 300ms;
+    }
+
+    .delay-400 {
+      animation-delay: 400ms;
+    }
+
+    /* Animaciones de scroll */
+    .scroll-animate {
+      opacity: 0;
+      transition: all 0.6s ease-out;
+    }
+
+    .scroll-animate.fade-in {
+      opacity: 0;
+    }
+
+    .scroll-animate.slide-up {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .scroll-animate.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <script>
+    // Intersection Observer para animaciones de scroll
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    // Observar todos los elementos con la clase scroll-animate
+    document.addEventListener('DOMContentLoaded', () => {
+      const animatedElements = document.querySelectorAll('.scroll-animate');
+      animatedElements.forEach(el => observer.observe(el));
+    });
+  </script>
+</Layout>
